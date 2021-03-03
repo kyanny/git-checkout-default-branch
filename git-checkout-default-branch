@@ -1,11 +1,11 @@
 #/usr/bin/env bash
 #
-# Setup:
-#   $ install -d $HOME/bin && install git-checkout-develop-master $HOME/bin
-#   $ export PATH=$HOME/bin:$PATH
+# Installation:
+#   $ chmod +x git-checkout-default-branch
+#   $ install git-checkout-default-branch /usr/local/bin
 #
 # Git Alias:
-#   $ git config --global --add alias.com '!git-checkout-develop-master'
+#   $ git config --global --add alias.com '!git-checkout-default-branch'
 
 # ref: https://qiita.com/ymm1x/items/b22bddc9fbc192ae1a70
 git checkout $(git remote show origin | grep 'HEAD branch' | awk '{print $NF}')

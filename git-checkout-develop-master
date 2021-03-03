@@ -7,10 +7,5 @@
 # Git Alias:
 #   $ git config --global --add alias.com '!git-checkout-develop-master'
 
-git show-ref --verify --quiet refs/heads/develop
-if [ $? == 0 ]
-then
-  git checkout develop
-else
-  git checkout master
-fi
+# ref: https://qiita.com/ymm1x/items/b22bddc9fbc192ae1a70
+git checkout $(git remote show origin | grep 'HEAD branch' | awk '{print $NF}')
